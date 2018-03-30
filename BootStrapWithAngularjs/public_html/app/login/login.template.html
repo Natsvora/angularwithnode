@@ -1,0 +1,156 @@
+<style>
+    .full button span {
+        background-color: limegreen;
+        border-radius: 32px;
+        color: black;
+    }
+
+    .partially button span {
+        background-color: orange;
+        border-radius: 32px;
+        color: black;
+    }
+    .ng-invalid.ng-dirty {
+        border-color: red;
+    }
+    .ng-valid.ng-dirty {
+        border-color: green;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+      
+            <form class="form-horizontal"  name="$ctrl.userForm"   novalidate> 
+                <div class="form-group">
+                    <label class="control-label col-xs-2">User Id</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" type="text" name="userId" ng-model="$ctrl.user.userId"  placeholder="Enter Id"  required  ng-maxlength="5" ng-minlength="3"/> 
+                        <div ng-messages="$ctrl.userForm.userId.$error" ng-show="$ctrl.userForm.userId.$touched" >
+                            <p ng-message="minlength">Userid is too short.</p>
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Userid is too long.</p>
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Your userid is required.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-2">Name</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" placeholder="Enter Name" type="text"  name="username" ng-model="$ctrl.user.username"  ng-maxlength="10"   required/> 
+                        <div ng-messages="$ctrl.userForm.username.$error" ng-show="$ctrl.userForm.username.$touched">
+                            <p ng-message="minlength">Username is too short.</p>
+
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Username is too long.</p>
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Your username is required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-2">Email</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" placeholder="Enter Email" type="email" name="mail" ng-model="$ctrl.user.mail"  required autocomplete="off" ng-maxlength="25"/> 
+                        <div ng-messages="$ctrl.userForm.mail.$error" ng-show="$ctrl.userForm.mail.$touched">
+                            <p ng-message="minlength">Email is too short.</p>
+
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Email is too long.</p>
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Your Email is required.</p>
+
+                            <p ng-message="email">Enter Proper Email.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-2">Designation</label> 
+                    <div class="col-xs-10">
+                        <select  name="desi" class="selectpicker form-control" ng-model="$ctrl.user.desi" ng-options="item for item in $ctrl.desi">
+</select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-2">Contact No</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" type="text"  placeholder="Enter Contact No" name="mno" ng-model="$ctrl.user.mno" minlength="10" maxlength="12" pattern="[0-9]{10}" required/> 
+                        <div ng-messages="$ctrl.userForm.mno.$error" ng-show="$ctrl.userForm.mno.$touched">
+                            <p ng-message="minlength">Number is too short.</p>
+
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Number is too long.</p>
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Number is required.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label class="control-label col-xs-2">Birth Date</label> 
+                    <div class="col-xs-10">
+                        <p class="input-group">
+                            <input type="text" name="date"  class="form-control" readonly  uib-datepicker-popup="{{$ctrl.format}}" ng-model="$ctrl.user.dt" is-open="$ctrl.popup1.opened" datepicker-options="$ctrl.dateOptions" ng-required="true" close-text="Close" alt-input-formats="$ctrl.altInputFormats" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="$ctrl.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-xs-2">Address</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" type="text" placeholder="Enter Address" name="addr" ng-model="$ctrl.user.addr" maxlength="100" required/> 
+                        <div ng-messages="$ctrl.userForm.addr.$error" ng-show="$ctrl.userForm.addr.$touched">
+
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Address is too long.</p>
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Address is required.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" ng-hide="$ctrl.registered">
+                    <label class="control-label col-xs-2">Password</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" type="password" placeholder="Enter Password" name="pass" ng-model="$ctrl.user.pass" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@&$])(?=.*[0-9]).{5,}$/" required/> 
+                        <div ng-messages="$ctrl.userForm.pass.$error" ng-show="$ctrl.userForm.pass.$touched">
+
+                            <p ng-message="minlength">Password is too short.</p>
+                            <!-- show an error if username is too long -->
+                            <p ng-message="maxlength">Password is too long.</p>
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Password is required.</p>
+                            <p ng-message="pattern">Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" ng-hide="$ctrl.registered">
+                    <label class="control-label col-xs-2">Confirm PassWord</label> 
+                    <div class="col-xs-10">
+                        <input class="form-control" type="password" placeholder="ReEnter Password" ng-change="$ctrl.changepass()" name="pass1" ng-model="$ctrl.user.pass1" required/> 
+                        <div ng-messages="$ctrl.userForm.pass1.$error" ng-show="$ctrl.userForm.pass1.$touched">
+
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Password is required.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-default col-lg-offset-6" ng-click="$ctrl.save()">Submit</button>
+                <a class="btn btn-default" href="#/">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

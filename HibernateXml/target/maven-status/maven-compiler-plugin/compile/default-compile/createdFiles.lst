@@ -1,0 +1,7 @@
+com/argusoft/hibernatexml/model/Student.class
+com/argusoft/hibernatexml/dao/UserDAOImpl.class
+com/argusoft/hibernatexml/model/User.class
+com/argusoft/hibernatexml/model/StudentDetails.class
+com/argusoft/hibernatexml/dao/UserDAO.class
+com/argusoft/hibernatexml/HomeController.class
+com/argusoft/hibernatexml/model/School.class

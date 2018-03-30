@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1200" pageHeight="1200" columnWidth="1160" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aacf5a4a-eede-4b07-9de2-1b3e245b8b53">
+	<property name="ireport.zoom" value="0.5131581182307068"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from student]]>
+	</queryString>
+	<field name="Enno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="studentimage" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="studentcol" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalmsrks" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="makrs" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="265" height="40" isRemoveLineWhenBlank="true" uuid="2f942f9e-c4da-4247-9d59-232639892338"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[University Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="374" y="10" width="337" height="40" isRemoveLineWhenBlank="true" uuid="4f0634cd-0a6a-4e58-b3e1-2c686518ad95"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentcol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="745" splitType="Stretch">
+			<staticText>
+				<reportElement x="401" y="110" width="118" height="47" uuid="e9ba71c7-717b-4825-8418-82df738f113d"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="593" y="30" width="118" height="47" uuid="021778ae-b70f-4d84-9d28-310e934b4a60"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Enno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="401" y="30" width="118" height="47" uuid="263d2e69-0c02-4717-9299-94dacf103f32"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[En no.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="593" y="110" width="118" height="47" uuid="708b02c8-2d51-4f22-a728-812fcabe164e"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

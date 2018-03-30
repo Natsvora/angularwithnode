@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student" language="groovy" pageWidth="1300" pageHeight="900" orientation="Landscape" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95ab4223-b0a8-48dc-8c38-3d052cacddf0">
+	<property name="ireport.zoom" value="0.620921323059155"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from student]]>
+	</queryString>
+	<field name="Enno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="studentimage" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="studentcol" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalmsrks" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="makrs" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="totalobtainmarks" class="java.lang.Number" calculation="Sum">
+		<variableExpression><![CDATA[$V{totalobtainmarks}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{sub1}+$F{sub2}+$F{sub3}+$F{sub5}+$F{sub4}]]></initialValueExpression>
+	</variable>
+	<variable name="variable1" class="java.lang.Number" calculation="Average">
+		<variableExpression><![CDATA[$V{variable1}]]></variableExpression>
+		<initialValueExpression><![CDATA[$V{totalobtainmarks}/$F{totalmsrks}*100]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="233" splitType="Stretch">
+			<staticText>
+				<reportElement x="51" y="7" width="265" height="40" uuid="c8f4a250-d3d7-4e56-b221-a1a3e23c389d"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[University Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="404" y="7" width="337" height="40" uuid="4815ab76-d31b-45c2-8c37-3b3f6d075970"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentcol}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="47" width="802" height="1" uuid="b4987893-896f-42a7-83f9-af7781e9a14d"/>
+			</line>
+			<staticText>
+				<reportElement x="404" y="94" width="118" height="47" uuid="cf3a3a8b-3314-4875-9927-0908f45d1792"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[En no.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="596" y="94" width="118" height="47" uuid="ae5677f7-087c-407e-96e0-0c01f6538cef"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Enno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="404" y="174" width="118" height="47" uuid="0d773e25-efd8-4534-82de-691f8f3e8a00"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="596" y="174" width="118" height="47" uuid="eff8381b-ca2a-49c5-b405-aa32ac005d30"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnFooter>
+		<band height="37" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="590" splitType="Stretch">
+			<staticText>
+				<reportElement x="136" y="294" width="173" height="28" uuid="13767925-80fb-4c07-9ed1-6e4dc5a137a0"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Subject2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="294" width="173" height="28" uuid="35758bae-4b66-47fe-9ea4-3cc4d4e906a0"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="294" width="173" height="28" uuid="48d3bb20-6c2e-49e2-ba48-da7b4ac7bb8e"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="294" width="173" height="28" uuid="428b1cf1-76f0-46c6-9e25-d0d21f771a3b"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub2}.intValue() >= 60 && $F{sub2}.intValue()<=80?"a":($F{sub2}.intValue() >= 40 && $F{sub2}.intValue()<=60?"b":$F{sub2}.intValue() >= 40 && $F{sub2}.intValue()<=60?"c":"d")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="293" width="173" height="28" uuid="46cb2aaf-b0ac-45bf-bff8-924ee6f407eb"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="293" width="173" height="28" uuid="d4d3ea12-b987-40d4-8ceb-e9049911956d"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="293" width="173" height="28" uuid="9a8514d7-ed29-4453-add2-fa62502bcac6"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub3}.intValue() >= 60 && $F{sub3}.intValue()<=80?"a":($F{sub3}.intValue() >= 40 && $F{sub3}.intValue()<=60?"b":$F{sub3}.intValue() >= 40 && $F{sub3}.intValue()<=60?"c":"d")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="293" width="173" height="28" uuid="22e62948-3031-4f7d-9cfa-8a43cd263be6"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Subject3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="368" width="173" height="28" uuid="4b829337-6e0b-4755-9191-b0057f3efafc"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makrs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="329" width="173" height="28" uuid="3ecaebea-dac7-4ef4-9690-9d014594865e"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Subject4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="368" width="173" height="28" uuid="6cea0e9f-a9ac-4bcb-96fc-5db149892cae"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Subject5]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="536" y="368" width="173" height="28" uuid="a9061dca-4704-48f9-a342-38778517a63b"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="330" width="173" height="28" uuid="29dc6be7-856b-47c9-ae9d-82b1531f79a1"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="368" width="173" height="28" uuid="a84c28dd-96ad-4f94-b04a-be50e1ed092e"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub5}.intValue() >= 60 && $F{sub5}.intValue()<=80?"a":($F{sub5}.intValue() >= 40 && $F{sub5}.intValue()<=60?"b":$F{sub5}.intValue() >= 40 && $F{sub5}.intValue()<=60?"c":"d")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="330" width="173" height="28" uuid="64a37a73-472b-467d-a76d-c7d42f8f5b65"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub4}.intValue() >= 60 && $F{sub4}.intValue()<=80?"a":($F{sub4}.intValue() >= 40 && $F{sub4}.intValue()<=60?"b":$F{sub4}.intValue() >= 40 && $F{sub4}.intValue()<=60?"c":"d")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="330" width="173" height="28" uuid="845eb270-69d7-47df-9c86-d221868e7273"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="249" width="173" height="28" uuid="87d34c7e-2931-4be5-a4ff-0832765c3cb3"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub1}.intValue() >= 60 && $F{sub1}.intValue()<=80?"a":($F{sub1}.intValue() >= 40 && $F{sub1}.intValue()<=60?"b":$F{sub1}.intValue() >= 40 && $F{sub1}.intValue()<=60?"c":"d")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="249" width="173" height="28" uuid="a1159fd9-276d-42d3-a2af-761d6c5d347f"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="249" width="173" height="28" uuid="3559fe1a-11a7-4b4b-aa1e-cce6c6126a6f"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makrs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="249" width="173" height="28" uuid="dae92871-8396-4389-a34f-b392ad465449"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Subject1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="207" width="173" height="28" uuid="1e18763b-7294-4588-b329-c8ca09d181d7"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Subjects]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="207" width="187" height="28" uuid="117f04ce-1113-4fcd-8489-524f4c541e19"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Obtained Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="722" y="207" width="186" height="28" uuid="e6f19604-cb77-4915-b1a2-a07c966fab39"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Obtained Grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="207" width="173" height="28" uuid="0dcad24f-6ce5-48c3-83a7-ada0ce5dc1a1"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Total Marks]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="536" y="454" width="173" height="28" uuid="3a4eeab4-4535-4966-aab9-1ce43f5c57a2"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalobtainmarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="454" width="173" height="28" uuid="077318a6-edb4-42a8-9fdb-1e76f8b84ce2"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalmsrks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="490" width="173" height="28" uuid="fbb28ada-7a22-4e26-bfcd-3ab1152ef1d6"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="138" y="453" width="173" height="28" uuid="ef7b36da-9190-4f63-9d21-0606283a1d9c"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Total Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="488" width="173" height="28" uuid="202f781a-41cf-4d06-a05f-df2c0907b534"/>
+				<textElement>
+					<font size="20"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5" rightIndent="5" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="190" splitType="Stretch"/>
+	</summary>
+</jasperReport>
